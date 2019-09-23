@@ -40,6 +40,14 @@ def monopoly_with_fourth_tier
   }
 end
 
+   it "has a key called :names" do
+      expect(monopoly_with_third_tier[:railroads].has_key?(:names)).to(be_truthy, ":railroads should point to a Hash with key names")
+    end
+
+    it ":names points to a Hash with four keys" do
+      expect(monopoly_with_third_tier[:railroads][:names].keys.count).to(eq(4), ":railroads :names Hash should record 4 railroads")
+    end
+    
 
   describe "the monopoly_with_fourth_tier method builds on the hash returned by monopoly_with_third_tier, but updates the Hash so that each of the :railroads :names keys points to a Hash with a key \"mortgage_value\" that is a String with a $-sign and an Integer after it" do
 
