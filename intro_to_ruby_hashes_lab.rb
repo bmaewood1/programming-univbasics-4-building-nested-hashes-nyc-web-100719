@@ -24,3 +24,19 @@ def monopoly_with_fourth_tier
   # they'll guide you in how to modify what you just did to have more
   # complexity.
 end
+
+
+describe "We can create complex, nested Hashes by implementing four methods:" do
+  describe "the base_hash method returns a Hash that" do
+    it "has one key" do
+      expect(base_hash.keys.count).to(eq(1), "Make sure you have at least one key defined in the monopoly hash")
+    end
+
+    it "the one key is called :railroads" do
+      expect(base_hash.has_key?(:railroads)).to(be_truthy, "Make sure you have a key called :railroads in the `monopoly` Hash and that :railroads points to a Hash")
+    end
+
+    it "the one key, :railroads, points to an empty Hash" do
+      expect(base_hash[:railroads]).to eq({})
+    end
+  end
