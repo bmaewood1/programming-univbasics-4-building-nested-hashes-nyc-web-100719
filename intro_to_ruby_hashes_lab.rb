@@ -16,6 +16,12 @@ def monopoly_with_third_tier
   monopoly = {
     :railroads => {
       :pieces => 4
+      :rent_in_dollars => {
+        :rent1 => 1,
+        :rent2 => 2, 
+        :rent3 => 3, 
+        :rent4 => 4 
+      }
     }
   }
 end
@@ -27,13 +33,3 @@ def monopoly_with_fourth_tier
   # complexity.
 end
 
-
- describe "the monopoly_with_second_tier method builds on the Hash returned by base_hash, but updates the inner Hash pointed at by :railroads such that the Hash" do
-    it "has a key called :pieces" do
-      expect(monopoly_with_second_tier[:railroads].has_key?(:pieces)).to(be_truthy, "Make sure the nested hash :railroads has a key called :pieces")
-    end
-
-    it "has a key, :pieces, points to the Integer value 4" do
-      expect(monopoly_with_second_tier[:railroads][:pieces]).to(eq(4), "Make sure the nested hash :railroads has a key called :pieces whose value is 4")
-    end
-  end
